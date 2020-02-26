@@ -10,5 +10,6 @@ script:
 
 after_success: 
   - docker build -t bloodjes/multi-client:latest ./client
+  - docker images
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push bloodjes/multi-client:latest
