@@ -9,6 +9,7 @@ script:
   - docker run -e CI=true tempbuild npm test
 
 after_success: 
+  - ls
   - docker build -t bloodjes/multi-client ./client
   - docker build -t bloodjes/multi-nginx ./nginx
   - docker build -t bloodjes/multi-server ./server
